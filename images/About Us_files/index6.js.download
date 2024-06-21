@@ -1,0 +1,22 @@
+const burgerMenu = document.querySelector('#burger-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+if (burgerMenu && mobileMenu) {
+    burgerMenu.addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('show-mobile-menu');
+        if (nav.classList.contains('show-mobile-menu')) {
+            mobileMenu.style.display = 'block'; // Display mobile menu
+            setTimeout(() => {
+                mobileMenu.style.transform = 'translateY(0)'; // Slide down animation
+            }, 50);
+        } else {
+            mobileMenu.style.transform = 'translateY(-100%)'; // Slide up animation
+            setTimeout(() => {
+                mobileMenu.style.display = 'none'; // Hide mobile menu after animation
+            }, 300);
+        }
+    });
+} else {
+    console.error('Element with ID burger-menu or class mobile-menu not found.');
+}

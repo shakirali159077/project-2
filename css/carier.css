@@ -1,0 +1,211 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-padding-top: 1rem;
+    scroll-behavior: smooth;
+    list-style: none; 
+    text-decoration: none;
+}
+
+
+:root {
+    --main-color: #fe5d3d;
+    --second-color: #ffac38;
+    --text-color: #444;
+    --gradient: linear-gradient(#fe5d3d, #ffac38);
+}
+
+html::-webkit-scrollbar {
+    width: 0.5rem;
+}
+html::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+html::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+    border-radius: 5rem;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #c1c6d0;
+}
+
+/* Logo styles */
+.logo img {
+    width: 100px;
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+}
+
+.navbar li {
+    position: relative;
+    list-style: none; /* Ensures no bullets */
+}
+
+.navbar a {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-decoration: none; /* Ensures no underline */
+}
+
+.navbar a::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    transition: 0.5s;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+    background: var(--main-color);
+}
+
+/* Menu icon styles */
+#menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+
+/* Media queries */
+@media only screen and (max-width: 1024px) {
+    header {
+        padding: 15px 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    header {
+        padding: 1px 35px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #c1c6d0;
+        z-index: 999;
+    }
+
+    .navbar.active li {
+        margin: 10px 0;
+    }
+
+    .navbar.active a {
+        padding: 10px;
+        display: block;
+    }
+}
+
+.accordion .accordion-item .accordion-header .accordion-button {
+    background-color: #1d5ad5;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+}
+.hidden-paragraph {
+    display: none;
+}
+
+
+.sec-10 {
+    margin-top: 30px;
+    width: 100%;
+    background-color: #0e2962;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box; /
+}
+
+.sec-10 .main-div5 {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
+}
+
+.sec-10 .main-div5 .info,
+.sec-10 .main-div5 .resources,
+.sec-10 .main-div5 .company,
+.sec-10 .main-div5 .Email {
+    margin-top: 20px; /* Adjust margin for smaller screens */
+    text-align: center; /* Center text for smaller screens */
+}
+
+.sec-10 .main-div5 .Email {
+    margin-top: 40px; /* Adjust margin for smaller screens */
+}
+
+.sec-10 .main-div5 .Email .new {
+    font-size: 1.25rem; /* Use rem units for responsive font size */
+    font-weight: 500;
+}
+
+.sec-10 .main-div5 .Email input {
+    padding: 10px;
+    width: 100%; /* Make input take full width on smaller screens */
+    box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.sec-10 .main-div5 .Email button {
+    padding: 8px 10px;
+    width: 100%; /* Make button take full width on smaller screens */
+    box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+@media (min-width: 600px) {
+    .sec-10 .main-div5 {
+        flex-direction: row; /* Row direction for larger screens */
+        justify-content: space-around;
+        margin-left: 50px;
+        align-items: flex-start; /* Align items to the start on larger screens */
+    }
+
+    .sec-10 .main-div5 .info,
+    .sec-10 .main-div5 .resources,
+    .sec-10 .main-div5 .company,
+    .sec-10 .main-div5 .Email {
+        margin-top: 50px; /* Restore larger margin for bigger screens */
+        text-align: left; /* Left-align text for larger screens */
+    }
+
+    .sec-10 .main-div5 .Email {
+        margin-top: 80px; /* Restore larger margin for bigger screens */
+    }
+
+    .sec-10 .main-div5 .Email input,
+    .sec-10 .main-div5 .Email button {
+        width: auto; /* Restore default width for larger screens */
+    }
+}
